@@ -4,6 +4,6 @@ const router = express.Router();
 const homeController = require('../controller/homeController');
 
 router.get('/',homeController.home);
-router.get('/profile',homeController.profile);
+router.use('/user',require('./user'));
 
 module.exports = router;

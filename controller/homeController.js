@@ -5,3 +5,4 @@ module.exports.home = function(req,res){
 module.exports.profile = (req,res) => {
     return res.send('<h1>Profile</h1>');
 }
+
