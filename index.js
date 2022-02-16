@@ -2,10 +2,7 @@ const express = require('express');
 const port = 3000;
 const app = express();
 
-app.get('/',function(req,res){
-    return res.send('<h1>HEllo</h1>');
-})
-
+app.use('/',require('./routes/index'));
 
 
 
