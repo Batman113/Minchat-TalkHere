@@ -7,7 +7,8 @@ const userDataSchema = new mongoose.Schema({
     },
     email:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     password:{
         type:String,
@@ -18,9 +19,9 @@ const userDataSchema = new mongoose.Schema({
         required:true
     }
 },{
-    timestamp:true
+    timestamps:true
 });
 
-const UserData = require('UserData',userDataSchema);
+const UserData = mongoose.model('UserData',userDataSchema);
 
 module.exports = UserData;
