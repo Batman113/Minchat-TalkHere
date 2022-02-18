@@ -1,4 +1,5 @@
 const Post = require('../models/posts');
+const UserData = require('../models/users');
 module.exports.home = function(req,res){
     // return res.send('<h1>Express is up</h1>');
     //populating the user before sending thae data
@@ -15,11 +16,14 @@ module.exports.home = function(req,res){
             console.log(err);
             return;
         }
-        console.log(post);
-        return res.render('home',{
-        title:"Minchat | Post Here",
-        Posts:post
-    });
+        // console.log(post);
+        UserData.find({},function(err,User){
+            return res.render('home',{
+                title:"Minchat | Post Here",
+                Posts:post,
+                User:User
+            });
+        })
     });
 }
 

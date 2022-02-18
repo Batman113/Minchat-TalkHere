@@ -1,10 +1,13 @@
 const UserData = require('../models/users');
-const userData = require('../models/users');
+// const userData = require('../models/users');
 module.exports.profile = function(req,res){
     // return res.send('<em>User Profile</em>');
-    return res.render('profile',{
-        title:"Profile"
-    });
+    UserData.findById(req.params.id,function(err,user){
+        return res.render('profile',{
+            title:"Profile",
+            puser:user
+        });
+    })
 }
 
 module.exports.post = function(req,res){
@@ -65,4 +68,23 @@ module.exports.loginSession = function(req,res){
 module.exports.logOut = function(req,res){
     req.logout();
     return res.redirect('/');
+}
+
+
+module.exports.update = function(req,res){
+    if(req.params.id == req.user.id){
+        UserData.findByIdAndUpdate(req.params.id,{
+            name:req.body.name,
+            email:req.body.email
+        },function(err,user){
+            if(err){
+                console.log('Error');
+                return;
+            }
+            return res.redirect('back');
+        })
+    }else{
+        console.log('Hell');
+        return res.status(401).send('Unauthrized');
+    }   
 }

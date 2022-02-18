@@ -10,6 +10,9 @@
         <ul>
             <%for(comment of post.comments){%>
                 <li><p><%=comment.content%></p><%=comment.user.name%></li>
+                <%if(locals.user){%>
+                    <a href="/comment/delete/?id=<%=comment._id%>"><button type="submit" class="btn btn-sm btn-warning">Delete</button></a>
+                <%}%>
             <%}%>
         </ul>
     </div>
