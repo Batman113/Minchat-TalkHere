@@ -1,7 +1,12 @@
 <div id="navbar">
     <ul>
         <li><h2>MinChat</h2></li>
-        <li><a href="/user/signIn">Sign In</a></li>
-        <li><a href="/user/signUp">Sign Up</a></li>
+        <% if(locals.user){%>
+            <li><a href="/user/profile"><%=user.name%></a></li>
+            <li><a href="/user/signOut">Sign Out</a></li>
+        <%}else{%>
+            <li><a href="/user/signIn">Sign In</a></li>
+            <li><a href="/user/signUp">Sign Up</a></li>
+        <%}%>
     </ul>
 </div>

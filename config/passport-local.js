@@ -10,14 +10,14 @@ passport.use(new LocalStrategy({
         //user finding and establishing identity
         UserData.findOne({email:email},function(err,user){
             if(err){
-            console.log('Error in finding user');
-            return done(err);
-        }  
-        if(!user || user.password != password){
-            console.log('Invalid username/password');
-            return done(null,false);
-        } 
-        return done(null,user);
+                console.log('Error in finding user');
+                return done(err);
+            }  
+            if(!user || user.password != password){
+                console.log('Invalid username/password');
+                return done(null,false);
+            } 
+            return done(null,user);
         });
     }
 ))
@@ -40,7 +40,7 @@ passport.deserializeUser(function(id,done){
 //used as middleware
 passport.checkAuthentication = function(req,res,next){
     if(req.isAuthenticated()){//user is signed in
-        next();//go to next function
+        return next();//go to next function
     }
     //if user is not signed in
     return res.redirect('/user/signIn');

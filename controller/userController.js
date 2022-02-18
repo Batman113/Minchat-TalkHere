@@ -61,3 +61,8 @@ module.exports.create = function(req,res){
 module.exports.loginSession = function(req,res){
     return res.redirect('/');
 }
+
+module.exports.logOut = function(req,res){
+    req.logout();
+    return res.redirect('/');
+}

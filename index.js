@@ -9,7 +9,12 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
-
+//to store the session key of the user as on server restart it is getting sign out
+const MongoStore = require('connect-mongo');
+// app.use(session({
+//     secret:'foo',
+//     store:MongoStore.create({mongoUrl : 'mongodb://localhost/'})
+// }));
 
 app.use(express.urlencoded());
 app.use(cookieParser());
@@ -31,7 +36,16 @@ app.use(session({
     resave:false,
     cookie:{
         maxAge : (1000 * 60 * 100)
-    }
+    },
+    store:new  MongoStore(
+        {
+            mongoUrl:'mongodb://localhost/minchat_posthereDB',
+            autoRemove:'disabled'
+        },
+        function(err){
+            console.log(err || 'connect mongo setup');
+        }
+    )
 }));
 
 app.use(passport.initialize());
