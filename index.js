@@ -11,6 +11,8 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local');
 //to store the session key of the user as on server restart it is getting sign out
 const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
+const customMiddleware = require('./config/middleware');
 // app.use(session({
 //     secret:'foo',
 //     store:MongoStore.create({mongoUrl : 'mongodb://localhost/'})
@@ -52,6 +54,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
+app.use(flash());
+app.use(customMiddleware.setFlash);
 app.use('/',require('./routes/index'));
 
 

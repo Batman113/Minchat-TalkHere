@@ -1,4 +1,5 @@
 const UserData = require('../models/users');
+const flash = require('connect-flash');
 // const userData = require('../models/users');
 module.exports.profile = function(req,res){
     // return res.send('<em>User Profile</em>');
@@ -21,7 +22,7 @@ module.exports.logIn = function(req,res){
 
         return res.render('logIn',{
             title:"Sign in",
-            detail:userData
+            detail:UserData
         });
 }
 module.exports.signUp = function(req,res){
@@ -54,6 +55,7 @@ module.exports.create = function(req,res){
                 }
             // return res.redirect('/user/signIn');
             })
+            // req.flash('message','Success');
             return res.redirect('/user/signIn');
         }
         return res.send('<h1>You are already present</h1>');
@@ -62,11 +64,13 @@ module.exports.create = function(req,res){
 
 
 module.exports.loginSession = function(req,res){
+    req.flash('success','Logged in');
     return res.redirect('/');
 }
 
 module.exports.logOut = function(req,res){
     req.logout();
+    req.flash('success','Logged Out');
     return res.redirect('/');
 }
 
