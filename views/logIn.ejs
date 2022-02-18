@@ -1,7 +1,8 @@
 <h1>Sign in page</h1>
-<form action="/user/loginSession" method="POST">
-    <label for="email">Email : <input type="email" name="email" id="email" placeholder="Enter email" required></label>
+<link href="/css/signIn.css" rel="stylesheet">
+<form action="/user/loginSession" method="POST" id="signInForm">
+    <label for="email" id="emailin">Email : <input type="email" name="email" id="email" placeholder="Enter email" required></label>
     <hr/>
-    <label for="password"> password : <input type="password" name="password" id="password" placeholder="password" required></label>
+    <label for="password" id="pasin"> password : <input type="password" name="password" id="password" placeholder="password" required></label>
     <button type="submit">Sign In</button>
 </form>

@@ -4,7 +4,7 @@ module.exports.profile = function(req,res){
     // return res.send('<em>User Profile</em>');
     return res.render('profile',{
         title:"Profile"
-    })
+    });
 }
 
 module.exports.post = function(req,res){
@@ -12,16 +12,25 @@ module.exports.post = function(req,res){
 }
 
 module.exports.logIn = function(req,res){
-    return res.render('logIn',{
-        title:"Sign in",
-        detail:userData
-    });
+  if(req.isAuthenticated()){
+        return res.redirect("back");
+    }
+
+        return res.render('logIn',{
+            title:"Sign in",
+            detail:userData
+        });
 }
 module.exports.signUp = function(req,res){
-    return res.render('signUp',{
+
+     if(req.isAuthenticated()){
+        return res.redirect('/');
+    }
+
+     return res.render('signUp',{
         title:"Sign Up"
     })
-    
+
 }
 
 

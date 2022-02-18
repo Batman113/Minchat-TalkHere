@@ -1,4 +1,18 @@
 body{
     margin:0;
-    background-color:aqua;
+    background-color:beige;
+    font-family:sans-serif;
 }
+
+#navbar{
+    height:60px;
+    background-color:brown;
+    }
+ul{
+    display:flex;
+}
+ul li{
+    list-style-type:none;
+    color:white;
+}
+
