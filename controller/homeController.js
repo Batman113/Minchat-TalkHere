@@ -9,3 +9,9 @@ module.exports.profile = (req,res) => {
     return res.send('<h1>Profile</h1>');
 }
 
+module.exports.links = function(Req,res){
+    return res.render('link',{
+        title:"Reading Links"
+    })
+}
+

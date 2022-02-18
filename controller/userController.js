@@ -36,11 +36,19 @@ module.exports.create = function(req,res){
         }
         if(!user){
             UserData.create(req.body,function(err,user){
-                console.log('Eror in signing user');
-                return;
+                if(err){
+                    console.log('Eror in signing user');
+                    return;
+                }
+            // return res.redirect('/user/signIn');
             })
             return res.redirect('/user/signIn');
         }
         return res.send('<h1>You are already present</h1>');
     })
+}
+
+
+module.exports.loginSession = function(req,res){
+    return res.redirect('/');
 }
