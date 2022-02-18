@@ -1,7 +1,16 @@
 const Post = require('../models/posts');
 module.exports.home = function(req,res){
     // return res.send('<h1>Express is up</h1>');
-    Post.find({},function(err,post){
+    //populating the user before sending thae data
+    Post.find({})
+    .populate('user')
+    .populate({
+        path:'comments',
+        populate:{
+            path:'user'
+        }
+    })
+    .exec(function(err,post){
         if(err){
             console.log(err);
             return;
@@ -11,7 +20,7 @@ module.exports.home = function(req,res){
         title:"Minchat | Post Here",
         Posts:post
     });
-    })
+    });
 }
 
 module.exports.profile = (req,res) => {
