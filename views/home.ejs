@@ -1,4 +1,28 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/home.css">
+<h1>
+    Minchat First day here
+</h1>
+<form action="/post/create" method="POST" class="container form" style="width: 600px;">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" id="title" class="form-control"> 
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Post</label>
+        <textarea name="content" id="content" class="form-control"></textarea> 
+    </div>
+    <button class="btn btn-lg btn-dark">POST</button>
+</form>
+<div id="posts">
+    <ul>
+        <%for(post of Posts){%>
+            <li id="post">
+                <h3><%=post.title%></h3>
+                <p><%=post.content%></p>
+            </li>
+        <%}%>
+    </ul>
+</div>
 
-            <h1>
-                Minchat First day here
-            </h1>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

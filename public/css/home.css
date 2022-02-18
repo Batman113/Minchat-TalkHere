@@ -1,0 +1,22 @@
+h1{
+    text-align:center;
+}
+
+#posts{
+    margin:auto;
+    border:2px solid rgb(16, 114, 160);
+    width:80%;
+}
+#post{
+    border:2px solid royalblue;
+    display:block;
+    width:60%;
+    margin:10px;
+    height:100px;
+    background-color: cadetblue;
+}
+#post p{
+    color:white;
+    font-size:1.3rem;
+    margin-left: 10px;
+}
