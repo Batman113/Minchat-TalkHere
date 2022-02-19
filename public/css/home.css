@@ -22,7 +22,7 @@ body{
     height:auto;
     /* padding:10px; */
 }
-#post{
+.postm{
     /* border:2px solid royalblue; */
     display:block;
     width:100%;
@@ -33,23 +33,23 @@ body{
     border-radius: 8px;
     position: relative;
 }
-#post p{
+.postm p{
     color:#3F72AF;
     font-size:1.05rem;
     margin-left: 10px;
 }
-#post h5{
+.postm h5{
     color:#112D4E;
     margin-left: 10px;
     text-transform: capitalize;
 }
-#postDelete{
+.postDelete{
     height:20px;
     position: absolute;
     top:8px;
     right:10px;
 }
-#postDelete:hover{
+.postDelete:hover{
     background-color:rgb(238, 135, 135);
 }
 /*Comment*/

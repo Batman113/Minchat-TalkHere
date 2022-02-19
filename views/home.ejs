@@ -1,8 +1,7 @@
-<link rel="stylesheet" href="/css/home.css">
 <h1>
     Minchat First day here
 </h1>
-<form action="/post/create" method="POST" class="container form" style="width: 600px;">
+<form action="/post/create" method="POST" class="container form" style="width: 600px;" id="new_post">
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" name="title" id="title" class="form-control"> 
@@ -16,13 +15,13 @@
 <div>
     <ul id="posts">
         <%for(post of Posts){%>
-            <li id="post">
+            <li id="post-<%=post._id%>" class="postm">
                 <h5><%=post.title%></h5>
                 <p><%=post.content%> 
                 <em>By <%=post.user.name%></em></p>
                 <%-include('comment');%>
                <%if(locals.user){%>
-                    <a href="/post/delete/<%=post._id%>"><img id="postDelete" src="https://cdn-icons.flaticon.com/png/512/484/premium/484662.png?token=exp=1645220086~hmac=f60fd19979ee06f494c5c7f35f3eb2f2"></a>
+                    <a href="/post/delete/<%=post._id%>"><img class="postDelete" src="https://cdn-icons.flaticon.com/png/512/484/premium/484662.png?token=exp=1645220086~hmac=f60fd19979ee06f494c5c7f35f3eb2f2"></a>
                <%}%>
             </li>
         <%}%>
@@ -39,3 +38,4 @@
     </ul>
 
 </div>
+<script src="/js/home_post.js"></script>
