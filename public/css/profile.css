@@ -1,0 +1,38 @@
+#updateForm{
+    margin:auto;
+    border:1px solid black;
+    display:flex;
+    flex-direction:column;
+    width:60%;
+    height:400px;
+    position:relative;
+    background-image: linear-gradient(45deg,rgb(231, 193, 193),rgb(129, 174, 216));
+}
+#nameup, #emailup{
+    height:40px;
+    width:80%;
+    padding-left: 10px;
+}
+/* #updateForm label{
+    padding-left: 10px;
+} */
+
+#upnamelabel{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    width:100%;
+}
+#upemaillabel{
+    position: absolute;
+    top:200px;
+    left:20px;
+    width:100%;
+}
+#updateForm button{
+    position: absolute;
+    bottom:40px;
+    width:80%;
+    left:10%;
+    height:45px;
+}

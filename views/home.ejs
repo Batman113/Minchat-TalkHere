@@ -1,4 +1,3 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/home.css">
 <h1>
     Minchat First day here
@@ -14,31 +13,29 @@
     </div>
     <button class="btn btn-lg btn-dark">POST</button>
 </form>
-<div id="posts">
-    <ul>
+<div>
+    <ul id="posts">
         <%for(post of Posts){%>
             <li id="post">
-                <h3><%=post.title%></h3>
-                <p><%=post.content%></p>
-                <p>By <%=post.user.name%></p>
+                <h5><%=post.title%></h5>
+                <p><%=post.content%> 
+                <em>By <%=post.user.name%></em></p>
                 <%-include('comment');%>
                <%if(locals.user){%>
-                    <a href="/post/delete/<%=post._id%>"><button type="submit" class="btn btn-dark">Delete</button></a>
+                    <a href="/post/delete/<%=post._id%>"><img id="postDelete" src="https://cdn-icons.flaticon.com/png/512/484/premium/484662.png?token=exp=1645220086~hmac=f60fd19979ee06f494c5c7f35f3eb2f2"></a>
                <%}%>
             </li>
         <%}%>
     </ul>
 </div>
 
-<div id="users">
-    <ul>
+<div >
+    <ul id="users">
         <%for(user of User){%>
-            <li>
+            <li id="user">
                 <a href="/user/profile/<%=user._id%>"><%=user.name%></a>
             </li>
         <%}%>
     </ul>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

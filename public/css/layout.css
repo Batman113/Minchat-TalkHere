@@ -6,7 +6,7 @@ body{
 
 #navbar{
     height:60px;
-    background-color:brown;
+    background-color:#393E46;
 }
 
 #nav{
@@ -16,19 +16,27 @@ body{
 }
 #nav li{
     list-style-type:none;
-    color:white;
+    color:#00ADB5;
     margin:10px 15px 0px 0px;
 }
-
+/* #brand{
+    font-size: 1.5rem;
+} */
 #nav li a{
     font-size: 1.2rem;
-    color:aquamarine;
+    color:#EEEEEE;
     text-transform: capitalize;
     text-decoration: none;
 }
+#nav li a:hover{
+    color:#00ADB5;
+}
 
-#brand{
+#brand h1{
     position: absolute;
     left:10px;
-    top:-5px;
+    top:3px;
+    color:#00ADB5;
+    /* font-size: 1.5rem; */
+    margin: 0;
 }

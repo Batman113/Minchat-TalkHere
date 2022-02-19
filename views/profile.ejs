@@ -1,10 +1,11 @@
+<link rel="stylesheet" href="/css/profile.css">
 <h1>Profile Page</h1>
 <h1><%=puser.name%></h1>
 
 <%if(locals.user.id == puser.id){%>
-    <form action="/user/update/<%=puser._id%>" method="POST">
-        <label for="name">Name : <input type="text" name="name" id="name" placeholder="Enter name"></label>
-        <label for="email">Email : <input type="email" name="email" id="email" placeholder="Enter email"></label>
+    <form action="/user/update/<%=puser._id%>" method="POST" id="updateForm">
+        <label for="nameup" id="upnamelabel">Name : <input type="text" name="name" id="nameup" placeholder="Enter name"></label>
+        <label for="emailup" id="upemaillabel">Email : <input type="email" name="email" id="emailup" placeholder="Enter email"></label>
         <button type="submit">Update</button>
     </form>
 <%}%>

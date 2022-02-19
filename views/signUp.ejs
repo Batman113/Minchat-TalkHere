@@ -1,12 +1,13 @@
+<link rel="stylesheet" href="/css/signUp.css">
 <h1>SIGN UP</h1>
 <link rel="stylesheet" href="/css/signUp.css">
 <form action="/user/create" method="POST" id="signUpForm">
-    <label for="name">Name : <input type="text" name="name" id="name" placeholder="Enter your name"></label>
+    <label for="name" id="namelabel">Name : <input type="text" name="name" id="name" placeholder="Enter your name"></label>
     <hr/>
-    <label for="email">Email : <input type="email" name="email" id="email" required></label>
+    <label for="email" id="nameemail">Email : <input type="email" name="email" id="email" required></label>
     <hr/>
-    <label for="password"> password : <input type="password" name="password" placeholder="password" id="password" required></label>
-    <label for="cpassword">Confirm password : <input type="password" name="cpassword" placeholder="confirm password" id="cpassword" required></label>
-    <label for="birthDate">Date of Birth :<input type="date" name="birthDate" placeholder="Date of Birth" id="birthDate"></label>
+    <label for="password" id="namepass"> password : <input type="password" name="password" placeholder="password" id="password" required></label>
+    <label for="cpassword" id="namecpass">Confirm password : <input type="password" name="cpassword" placeholder="confirm password" id="cpassword" required></label>
+    <label for="birthDate" id="namebirth">Date of Birth :<input type="date" name="birthDate" placeholder="Date of Birth" id="birthDate"></label>
     <button type="submit">Sign Up</button>
 </form>

@@ -1,6 +1,8 @@
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/home.css">
 <div id="navbar">
     <ul id="nav">
-        <li id="brand"><h2>MinChat</h2></li>
+        <li ><a href="/" id="brand"><h1>MinChat</h1></a></li>
         <% if(locals.user){%>
             <li><a href="/user/profile/<%=locals.user._id%>"><%=locals.user.name%></a></li>
             <li><a href="/user/signOut">Sign Out</a></li>
