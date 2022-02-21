@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
+const passportJWT = require('./config/passport-jwt');
 //to store the session key of the user as on server restart it is getting sign out
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
@@ -22,6 +23,8 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(expressEJSLayouts);
 app.use(express.static(__dirname + '/public'));
+//avatar path
+app.use('/uploads',express.static(__dirname+'/uploads'));
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
