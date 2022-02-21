@@ -10,6 +10,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
 const passportJWT = require('./config/passport-jwt');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 //to store the session key of the user as on server restart it is getting sign out
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
