@@ -1,0 +1,109 @@
+h1{
+    text-align:center;
+}
+body{
+    background-color:#F5F5F5;
+}
+.form{
+    /* border:1px solid blue; */
+    box-shadow: -5px -5px 30px 5px #C9D6DF,
+    5px 5px 30px 5px #DBE2EF;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    background-color:#EEEEEE;
+}
+
+#posts{
+    margin:auto;
+    /* background-image: linear-gradient(45deg,rgb(124, 218, 144),rgb(236, 147, 147)); */
+    width:70%;
+    padding-left: 0px;
+    height:auto;
+    /* padding:10px; */
+}
+.postm{
+    /* border:2px solid royalblue; */
+    display:block;
+    width:100%;
+    margin-bottom:10px;
+    height:auto;
+    padding-bottom: 2px;
+    background-color: #DBE2EF;
+    border-radius: 8px;
+    position: relative;
+}
+.postm p{
+    color:#3F72AF;
+    font-size:1.05rem;
+    margin-left: 10px;
+}
+.postm h5{
+    color:#112D4E;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+.postDelete{
+    height:20px;
+    position: absolute;
+    top:8px;
+    right:10px;
+}
+.postDelete:hover{
+    background-color:rgb(238, 135, 135);
+}
+/*Comment*/
+#comment{
+    width:70%;
+}
+#commentForm{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#commentForm button{
+    border:none;
+    background-color:#3F72AF;
+    color:#DBE2EF;
+    border-radius: 10px;
+}
+#commentDel{
+    height:20px;
+    position:absolute;
+    top:5px;
+    right:10px;
+}
+#commentdis{
+    /* border:2px solid black; */
+    margin:10px;
+    background-color: #F5F5F5;
+}
+#eachCommentdis{
+    /* display:flex; */
+
+    position:relative;
+}
+#eachCommentdis p{
+    margin: 0;
+    margin-right: 5px;
+}
+
+#users{
+    margin: auto;
+    background-color:#3F72AF;
+    width:70%;
+    height:auto;
+    padding:10px;
+}
+#user{
+  list-style: none;   
+}
+#user a{
+    color:#C9D6DF;
+    text-decoration:none;
+    margin:4px;
+    /* height:30px; */
+}
+#user a:hover{
+    color:#52616B;
+}
